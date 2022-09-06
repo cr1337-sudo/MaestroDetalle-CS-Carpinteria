@@ -39,7 +39,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgwDetalles = new System.Windows.Forms.DataGridView();
             this.txtTotal = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblSubTotal = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -82,8 +82,10 @@
             // 
             // txtFecha
             // 
+            this.txtFecha.Enabled = false;
             this.txtFecha.Location = new System.Drawing.Point(149, 13);
             this.txtFecha.Name = "txtFecha";
+            this.txtFecha.ReadOnly = true;
             this.txtFecha.Size = new System.Drawing.Size(100, 20);
             this.txtFecha.TabIndex = 3;
             // 
@@ -124,6 +126,7 @@
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dgwDetalles
             // 
@@ -150,12 +153,12 @@
             this.txtTotal.Size = new System.Drawing.Size(100, 20);
             this.txtTotal.TabIndex = 13;
             // 
-            // textBox6
+            // txtSubTotal
             // 
-            this.textBox6.Location = new System.Drawing.Point(630, 331);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 12;
+            this.txtSubTotal.Location = new System.Drawing.Point(630, 331);
+            this.txtSubTotal.Name = "txtSubTotal";
+            this.txtSubTotal.Size = new System.Drawing.Size(100, 20);
+            this.txtSubTotal.TabIndex = 12;
             // 
             // lblTotal
             // 
@@ -240,6 +243,9 @@
             this.colAcciones.HeaderText = "Acciones";
             this.colAcciones.Name = "colAcciones";
             this.colAcciones.ReadOnly = true;
+            this.colAcciones.Text = "Remover";
+            this.colAcciones.ToolTipText = "Remover";
+            this.colAcciones.UseColumnTextForButtonValue = true;
             // 
             // FrmNuevoPresupuesto
             // 
@@ -250,7 +256,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtTotal);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtSubTotal);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblSubTotal);
             this.Controls.Add(this.dgwDetalles);
@@ -265,6 +271,7 @@
             this.Controls.Add(this.lblFecha);
             this.Name = "FrmNuevoPresupuesto";
             this.Text = "FrmPresupuesto";
+            this.Load += new System.EventHandler(this.FrmNuevoPresupuesto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgwDetalles)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -284,7 +291,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dgwDetalles;
         private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtSubTotal;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblSubTotal;
         private System.Windows.Forms.Button btnAceptar;
