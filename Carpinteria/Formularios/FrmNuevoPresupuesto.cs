@@ -127,5 +127,49 @@ namespace Carpinteria.Formularios
             calcularTotales();
         }
 
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtCliente.Text))
+            {
+                MessageBox.Show("Debe ingresar un cliente válido...", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCliente.Focus();
+                return;
+            }
+            if(dgwDetalles.Rows.Count == 0)
+            {
+                MessageBox.Show("Debe ingresar al menos un detalle...", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            //Grabas maestro y detalle
+            GuardarPresupuesto();
+        }
+
+        private void GuardarPresupuesto()
+        {
+            nuevoPresupuesto.Fecha = Convert.ToDateTime(txtFecha.Text);
+            nuevoPresupuesto.Client = txtCliente.Text;
+            nuevoPresupuesto.Descuento = Convert.ToDouble(txtDescuento.Text);
+            //   nuevoPresupuesto.AgregarDetalle(detallePresupuesto); Ya está agregado
+            nuevoPresupuesto.Total = Convert.ToDouble(txtTotal.Text);
+
+            if (nuevoPresupuesto.Confirmar())
+            {
+                MessageBox.Show("El presupuesto se grabó correctamente", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Ciera el formulario y libera los recursos
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("El presupuesto  no se pudo grabar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 
+            }
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

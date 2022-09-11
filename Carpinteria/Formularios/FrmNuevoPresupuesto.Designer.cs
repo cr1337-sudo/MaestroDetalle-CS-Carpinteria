@@ -38,6 +38,11 @@
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgwDetalles = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAcciones = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtSubTotal = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -45,11 +50,6 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblPresupuesto = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAcciones = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgwDetalles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,6 +146,43 @@
             this.dgwDetalles.TabIndex = 9;
             this.dgwDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwDetalles_CellContentClick);
             // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // colProd
+            // 
+            this.colProd.HeaderText = "Producto";
+            this.colProd.Name = "colProd";
+            this.colProd.ReadOnly = true;
+            this.colProd.Width = 150;
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.HeaderText = "Precio";
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.ReadOnly = true;
+            this.colPrecio.Width = 150;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
+            this.colCantidad.Width = 150;
+            // 
+            // colAcciones
+            // 
+            this.colAcciones.HeaderText = "Acciones";
+            this.colAcciones.Name = "colAcciones";
+            this.colAcciones.ReadOnly = true;
+            this.colAcciones.Text = "Remover";
+            this.colAcciones.ToolTipText = "Remover";
+            this.colAcciones.UseColumnTextForButtonValue = true;
+            // 
             // txtTotal
             // 
             this.txtTotal.Location = new System.Drawing.Point(630, 361);
@@ -189,6 +226,7 @@
             this.btnAceptar.TabIndex = 14;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -198,6 +236,7 @@
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblPresupuesto
             // 
@@ -209,43 +248,6 @@
             this.lblPresupuesto.TabIndex = 16;
             this.lblPresupuesto.Text = "Presupuesto N°";
             this.lblPresupuesto.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // colProd
-            // 
-            this.colProd.HeaderText = "Producto";
-            this.colProd.Name = "colProd";
-            this.colProd.ReadOnly = true;
-            this.colProd.Width = 150;
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.HeaderText = "Precio";
-            this.colPrecio.Name = "colPrecio";
-            this.colPrecio.ReadOnly = true;
-            this.colPrecio.Width = 150;
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            this.colCantidad.ReadOnly = true;
-            this.colCantidad.Width = 150;
-            // 
-            // colAcciones
-            // 
-            this.colAcciones.HeaderText = "Acciones";
-            this.colAcciones.Name = "colAcciones";
-            this.colAcciones.ReadOnly = true;
-            this.colAcciones.Text = "Remover";
-            this.colAcciones.ToolTipText = "Remover";
-            this.colAcciones.UseColumnTextForButtonValue = true;
             // 
             // FrmNuevoPresupuesto
             // 
